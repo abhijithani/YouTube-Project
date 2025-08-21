@@ -7,20 +7,27 @@ import store from './components/utilis/appstore'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Maincontainer from './components/body/Maincontainer'
 import WatchPage from './components/watchpage/WatchPage'
+import Demo from './components/Demo/Demo'
+import Demo2 from './components/Demo/Demo2'
 
- 
+
 const appRouter = createBrowserRouter([{
   path: "/",
-  element: <Body/>,
-  children:[
+  element: <Body />,
+  children: [
     {
       path: "/",
-      element: <Maincontainer/>
+      element: <Maincontainer />
     },
     {
       path: "watch",
-      element : <WatchPage />
-    } 
+      element: <WatchPage />
+    },
+    {
+      path: "demo",
+      element: <><Demo /> <Demo2/></>
+      
+    }
   ]
 }])
 
@@ -32,7 +39,7 @@ function App() {
     <Provider store={store}>
       <div>
         <Header />
-        <RouterProvider router={appRouter}/>
+        <RouterProvider router={appRouter} />
       </div>
     </Provider>
   )
