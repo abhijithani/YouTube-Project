@@ -17,7 +17,7 @@ const Header = () => {
     const timer = setTimeout(() => {
       if (searchCahe[searchQuery]) {
         setSuggestions(searchCahe[searchQuery]);
-      }else{
+      } else {
         getSearchSuggestion()
       }
     }, 200);
@@ -43,9 +43,9 @@ const Header = () => {
     dispatch(toggleMenu());
   };
   return (
-    <div className='grid grid-flow-col col-span-12 m-1 p-2  shadow-md'>
+    <div className='grid grid-flow-col col-span-9  p-2  fixed top-0 left-0 w-full h-[64px]  bg-white z-50'>
 
-      <div className='col-span-2 flex items-center '>
+      <div className='col-span-1 flex items-center '>
         <img
           onClick={togglehandleClick}
           className='h-11 cursor-pointer' src="https://icon-library.com/images/menu-icon-mobile/menu-icon-mobile-20.jpg" alt="menu icon" />
@@ -58,10 +58,10 @@ const Header = () => {
 
       </div>
 
-      <div className='col-span-10 px-10'>
-        <div>
+      <div className='col-span-7 px-10 '>
+        <div className='flex justify-center my-1 relative'>
           <input type="text"
-            className='border w-[40%] border-gray-700 rounded-l-full px-2 py-1'
+            className='border w-[40%] border-gray-700 rounded-l-full pl-3 py-1'
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setShowsuggestions(true)}
@@ -76,7 +76,7 @@ const Header = () => {
         </div>
         {showSuggestions && suggestions.length > 0 && (
 
-          <div className='fixed bg-white py-4 px-6 w-[30rem] shadow-2xl  border border-gray-200  rounded-md m-2'>
+          <div className=' absolute top-full left-[38%] w-[26%]  bg-white py-2 px-6  shadow-2xl  border border-gray-200  rounded-md '>
             <ul>
               {suggestions.map((sug) => (
                 <li key={sug} className=' py-2 px-2 hover:bg-gray-100 rounded-md'>{sug}</li>
@@ -86,7 +86,7 @@ const Header = () => {
         )}
       </div>
 
-      <div className='flex col-span-2 justify-end'>
+      <div className='flex col-span-1 justify-end'>
         <img className='h-10 ' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR5NNT9-V31hriLzACMhtUW3Xh_b5USGlLkw&s" alt='bellicon' />
         <img className='h-10' src="https://png.pngtree.com/png-clipart/20240722/original/pngtree-user-profile-icon-image-vector-png-image_15611025.png" alt="profile icon" />
       </div>

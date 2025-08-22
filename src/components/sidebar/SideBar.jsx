@@ -8,8 +8,8 @@ const SideBar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className='w-[10%] md:w-[10%] shadow-md'>
-      <ul className='py-5 border-b'>
+    <div className='fixed w-[11%] mt-[64px] shadow-md h-screen overflow-y-scroll'>
+      <ul className='p-3 border-b '>
         <li className='p-2 px-3 '><Link to={"/"}>
           Home
         </Link>
@@ -23,7 +23,8 @@ const SideBar = () => {
         <li className='p-2 px-3'>Youtube music</li>
       </ul>
 
-      <ul className='py-5 border-b'>
+      <ul className='p-2 border-b'>
+        <h1 className='p-2 px-3 font-bold'>You {'>'}</h1>
         <li className='p-2 px-3' > History</li>
         <li className='p-2 px-3'>playlists</li>
         <li className='p-2 px-3'>Your videos</li>
@@ -32,11 +33,24 @@ const SideBar = () => {
         <li className='p-2 px-3'>Downloads</li>
       </ul>
 
-      <ul className='py-5 border-b'>
-        <li>Home</li>
-        <li>Shorts</li>
-        <li>subscriptions</li>
-        <li>Youtube music</li>
+      <ul className='p-2 border-b'>
+        <h1 className='p-2 px-3 font-bold'>You {'>'}</h1>
+        <li className='p-2 px-3' > History</li>
+        <li className='p-2 px-3'>playlists</li>
+        <li className='p-2 px-3'>Your videos</li>
+        <li className='p-2 px-3' >Watch Later</li>
+        <li className='p-2 px-3'>Liked videos</li>
+        <li className='p-2 px-3'>Downloads</li>
+      </ul>
+
+        <ul className='p-2 border-b'>
+        <h1 className='p-2 px-3 font-bold'>You {'>'}</h1>
+        <li className='p-2 px-3' > History</li>
+        <li className='p-2 px-3'>playlists</li>
+        <li className='p-2 px-3'>Your videos</li>
+        <li className='p-2 px-3' >Watch Later</li>
+        <li className='p-2 px-3'>Liked videos</li>
+        <li className='p-2 px-3'>Downloads</li>
       </ul>
     </div>
   )

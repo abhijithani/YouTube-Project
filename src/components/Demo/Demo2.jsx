@@ -14,7 +14,7 @@ const Demo2 = () => {
   const timer = useRef(null);
   useEffect(() => {
      timer.current = setInterval(() => {
-      console.log("abhijith", Math.random());   
+      // console.log("abhijith", Math.random());   
     },2000);
 
     return () => {

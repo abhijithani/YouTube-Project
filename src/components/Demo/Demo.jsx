@@ -31,6 +31,10 @@ const Demo = () => {
         <h1 className='font-bold p-2'>nth prime: {prime}</h1>
       </div>
 
+
+      <div>
+        <img src="" alt="" />
+      </div>
     </div>
   )
 }

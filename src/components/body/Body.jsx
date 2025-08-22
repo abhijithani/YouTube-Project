@@ -10,9 +10,9 @@ const Body = () => {
   return (
 
     <div className='grid-flow-col col-span-12 flex '>
-      <SideBar/>
-      <Outlet/>
-      </div>
+      <SideBar />
+      <Outlet />
+    </div>
   )
 }
 
