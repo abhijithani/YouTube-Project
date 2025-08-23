@@ -10,9 +10,9 @@ const Maincontainer = () => {
   return (
     <div className={` px-4 ${isSidebarOpen ? "ml-[11%]" : "ml-0"}`}>
       <ButtonList selectedCategory={category} onCategorySelect={setCategory} />
-      <VideoContainer />
+      <VideoContainer isSideList ={false}/>
     </div>
   )
 }
 
-export default Maincontainer
+export default Maincontainer;
