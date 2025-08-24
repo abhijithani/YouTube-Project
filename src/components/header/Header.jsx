@@ -48,11 +48,11 @@ const Header = () => {
       <div className='col-span-1 flex items-center '>
         <img
           onClick={togglehandleClick}
-          className='h-11 cursor-pointer' src="https://icon-library.com/images/menu-icon-mobile/menu-icon-mobile-20.jpg" alt="menu icon" />
+          className='h-9 cursor-pointer' src="https://www.shareicon.net/data/512x512/2016/04/03/743930_button_512x512.png" alt="menu icon" />
 
         <a href='/'>
           <div>
-            <img className='h-7' src='https://t4.ftcdn.net/jpg/07/32/01/31/360_F_732013128_4w36WRSEpuF1oT9nK0Bd31GT353WqFYi.jpg' alt='youtube logo' />
+            <img className='h-7'  src='https://t4.ftcdn.net/jpg/07/32/01/31/360_F_732013128_4w36WRSEpuF1oT9nK0Bd31GT353WqFYi.jpg' alt='youtube logo' />
           </div>
         </a>
 
