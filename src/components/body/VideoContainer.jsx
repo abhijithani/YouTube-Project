@@ -21,12 +21,14 @@ const VideoContainer = ({ isSideList = false }) => {
 
   return (
     <div className={isSideList ? "flex flex-col space-y-4" : "grid grid-cols-3 pt-[114px]"}>
-      {videos[0] && (
+      {/* {videos[0] && (
         <div className=' p-2'>
+          <Link  to={"/watch?v=" + videos.id} state={{ videos }}>
           <AdVideoCard info={videos[0]} />
+        </Link>
         </div>
-      )}
-      {videos.slice(1).map((video) => (
+      )} */}
+      {videos.map((video) => (
         <div key={video.id} className=' p-2'>
         <Link  to={"/watch?v=" + video.id} state={{ video }}>
           <VideoCard info={video} />
