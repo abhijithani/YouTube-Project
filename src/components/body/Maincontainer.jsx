@@ -3,14 +3,16 @@ import ButtonList from './ButtonList'
 import VideoContainer from './VideoContainer'
 import { useSelector } from 'react-redux';
 
-const Maincontainer = () => {
+const Maincontainer = ({isSidelist}) => {
 
   const isSidebarOpen = useSelector((store) => store.app.isMenuOpen);
-  const [category, setCategory] = useState()
+  
+  const [category, setCategory] = useState("All")
+
   return (
     <div className={` px-4 ${isSidebarOpen ? "ml-[11%]" : "ml-0"}`}>
-      <ButtonList selectedCategory={category} onCategorySelect={setCategory} />
-      <VideoContainer isSideList ={false}/>
+      <ButtonList onCategorySelect={setCategory} />
+      <VideoContainer isSideList={isSidelist} category={category} />
     </div>
   )
 }

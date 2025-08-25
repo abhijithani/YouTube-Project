@@ -1,10 +1,11 @@
 import React from 'react'
 import { GOOGLE_KEY } from '../utilis/constants';
 
-const VideoCard = ({ info }) => {
+const VideoCard = ({ info , isSideList}) => {
   if (!info) return null;
   // console.log(info); 
-
+  console.log(isSideList);
+  
   const { snippet, statistics } = info;
   const { channelTitle, channelId, title, thumbnails } = snippet;
 
@@ -19,15 +20,17 @@ const VideoCard = ({ info }) => {
   }
 
   return (
-    <div className=' w-full aspect-video   '>
+    <div className={`w-full  ${isSideList ? "flex " : "aspect-video"} `}>
       <img
-        className='rounded-xl w-full h-full object-cover ' f
+        className={`rounded-xl object-cover ${isSideList ? "w-44 m-2 aspect-video" : "w-full h-full"} `}
         src={thumbnails.high.url}
       />
       <ul>
         <li className='font-bold'>{title}</li>
         <li className='text-gray-600'>{channelTitle}</li>
-        <li>{formatViews(statistics.viewCount)} views</li>
+        <li>{statistics?.viewCount
+          ? `${formatViews(statistics.viewCount)} views`
+          : "N/A views"} </li>
       </ul>
     </div>
   )
