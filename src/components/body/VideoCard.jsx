@@ -4,7 +4,7 @@ import { GOOGLE_KEY } from '../utilis/constants';
 const VideoCard = ({ info , isSideList}) => {
   if (!info) return null;
   // console.log(info); 
-  console.log(isSideList);
+  // console.log(isSideList);
   
   const { snippet, statistics } = info;
   const { channelTitle, channelId, title, thumbnails } = snippet;

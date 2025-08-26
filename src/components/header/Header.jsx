@@ -3,6 +3,7 @@ import { toggleMenu } from '../utilis/appSlice';
 import { useEffect, useState } from 'react';
 import { YOUTUBE_SEARCH_API } from '../utilis/constants';
 import { cacheResults } from '../utilis/searchSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
 
@@ -10,7 +11,7 @@ const Header = () => {
   const [suggestions, setSuggestions] = useState([])
   const [showSuggestions, setShowsuggestions] = useState(false)
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const searchCahe = useSelector((store) => store.search);
 
   useEffect(() => {
@@ -43,6 +44,12 @@ const Header = () => {
     dispatch(toggleMenu());
   };
 
+  const handleSearch = (sug) => {
+    console.log("hii");
+    navigate("/results?search_query=" + sug);
+    setShowsuggestions(false);
+  }
+
   return (
     <div className='grid grid-flow-col col-span-9  p-2  fixed top-0 left-0 w-full h-[64px]  bg-white z-50'>
 
@@ -53,7 +60,7 @@ const Header = () => {
 
         <a href='/'>
           <div>
-            <img className='h-7' src='https://t4.ftcdn.net/jpg/07/32/01/31/360_F_732013128_4w36WRSEpuF1oT9nK0Bd31GT353WqFYi.jpg' alt='youtube logo' />
+            <img className='h-20 ' src= "src\assets\viewPointLogo.jpg" alt='youtube logo' />
           </div>
         </a>
 
@@ -66,7 +73,7 @@ const Header = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setShowsuggestions(true)}
-            onBlur={() => setShowsuggestions(false)}
+            onBlur={()=> setTimeout(() => setShowsuggestions(false),200)}
             placeholder='Search' />
 
           <button
@@ -80,7 +87,11 @@ const Header = () => {
           <div className=' absolute top-full left-[38%] w-[26%]  bg-white py-2 px-6  shadow-2xl  border border-gray-200  rounded-md '>
             <ul>
               {suggestions.map((sug) => (
-                <li key={sug} className=' py-2 px-2 hover:bg-gray-100 rounded-md'>{sug}</li>
+                <li key={sug} className=' py-2 px-2 hover:bg-gray-100 rounded-md'
+                  onClick={() => handleSearch(sug)}
+                >
+                  {sug}
+                </li>
               ))}
             </ul>
           </div>
