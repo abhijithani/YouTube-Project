@@ -7,6 +7,7 @@ import ButtonList from '../body/ButtonList';
 import { HigerVideoContainer } from '../body/VideoContainer';
 import { useLocation } from "react-router-dom";
 import Maincontainer from '../body/Maincontainer';
+import CommentsPostCont from './comments/CommentsPostCont';
 
 const WatchPage = () => {
 
@@ -68,7 +69,7 @@ const WatchPage = () => {
                     </div>
 
 
-                    <CommentsContianer />
+                    <CommentsPostCont/>
                 </div>
                 <div className=''>
                     <Maincontainer isSidelist ={true}/>

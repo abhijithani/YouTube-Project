@@ -21,7 +21,7 @@ const Header = () => {
       } else {
         getSearchSuggestion()
       }
-    }, 200);
+    }, 400);
 
     return () => {
       clearTimeout(timer);
@@ -48,15 +48,16 @@ const Header = () => {
     console.log("hii");
     navigate("/results?search_query=" + sug);
     setShowsuggestions(false);
+    setSearchQuery(sug);
   }
 
   return (
     <div className='grid grid-flow-col col-span-9  p-2  fixed top-0 left-0 w-full h-[64px]  bg-white z-50'>
 
-      <div className='col-span-1 flex items-center '>
+      <div className='col-span-1 flex items-center h-10  '>
         <img
           onClick={togglehandleClick}
-          className='h-9 cursor-pointer' src="https://www.shareicon.net/data/512x512/2016/04/03/743930_button_512x512.png" alt="menu icon" />
+          className='h-7 cursor-pointer' src="https://www.shareicon.net/data/512x512/2016/04/03/743930_button_512x512.png" alt="menu icon" />
 
         <a href='/'>
           <div>
@@ -87,7 +88,7 @@ const Header = () => {
           <div className=' absolute top-full left-[38%] w-[26%]  bg-white py-2 px-6  shadow-2xl  border border-gray-200  rounded-md '>
             <ul>
               {suggestions.map((sug) => (
-                <li key={sug} className=' py-2 px-2 hover:bg-gray-100 rounded-md'
+                <li key={sug} className=' py-2 px-2 hover:bg-gray-100 rounded-md cursor-pointer'
                   onClick={() => handleSearch(sug)}
                 >
                   {sug}
