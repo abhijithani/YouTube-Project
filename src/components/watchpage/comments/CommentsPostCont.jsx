@@ -4,10 +4,15 @@ import Comment from './Comment';
 const CommentsPostCont = () => {
     const [comments, setComments] = useState([
         {
-            name: "abijith",
-            text: "this is great video",
+            name: "ashwin",
+            text: "Is this built fully in React",
             replies: [],
-        }
+        },
+        {
+            name: "Rahul",
+            text: "Wow, the UI looks just like YouTube",
+            replies: [],
+        },
     ]);
 
     const addComments = (text) => {
@@ -22,7 +27,8 @@ const CommentsPostCont = () => {
     }
 
     const [newComment, setNewComment] = useState("");
-
+    console.log(comments);
+    
     return (
         <div className='ml-4 p-1 '>
             <h1 className=' p-2 font-bold text-2xl'>Comments</h1>
@@ -56,23 +62,23 @@ const CommentsPostCont = () => {
                         comment
                     </button>
                 </div>
-
+                        
                 {/* {comment list} */}
-                {comments.map((comment,i) =>{
+                {comments.reverse().map((comment,i) =>(
                     <Comment
-                        key={i}
-                        data={comment}
-                        onReply={(text) =>{
-                            const updated = [...comments];
-                            updated[i].replies.push({
-                                name: "you",
-                                text,
-                                replies:[],
-                            });
-                            setComments(updated);
+                    key={i}
+                    data={comment}
+                    onReply={(text) =>{
+                        const updated = [...comments];
+                        updated[i].replies.push({
+                            name: "you",
+                            text,
+                            replies:[],
+                        });
+                        setComments(updated);
                         }}
                     />
-                })}
+                ))}
 
             </div>
 

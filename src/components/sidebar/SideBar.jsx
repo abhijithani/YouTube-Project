@@ -13,11 +13,11 @@ const SideBar = () => {
           Home
         </Link>
         </li>
-
+{/* 
         <li className='p-2 px-3 '><Link to={"/demo"}>
           Demo
         </Link>
-        </li>
+        </li> */}
         
         <li className='p-2 px-3'>Shorts</li>
         <li className='p-2 px-3'>subscriptions</li>

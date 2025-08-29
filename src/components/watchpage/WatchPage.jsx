@@ -12,12 +12,12 @@ import CommentsPostCont from './comments/CommentsPostCont';
 const WatchPage = () => {
 
     const [searchparam] = useSearchParams();
-    console.log(searchparam.get("v"));
+    // console.log(searchparam.get("v"));
     const isSidebarOpen = useSelector((store) => store.app.isMenuOpen);
     const dispatch = useDispatch();
     const location = useLocation();
     const video = location.state?.video;
-    console.log(video);
+    // console.log(video);
 
     useEffect(() => {
         dispatch(closeMenu());
